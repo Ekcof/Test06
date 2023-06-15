@@ -2,21 +2,24 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Responsible for storing, collecting and leaving items of player
+/// </summary>
 public class Inventory : MonoBehaviour
 {
     [SerializeField] private static GameObject prefab;
 
-    private static float MaxWeight = 70f;
-    private static Item helmet;
-    private static Item armor;
-    private static Weapon currentWeapon;
+    private float MaxWeight = 70f;
+    private Item helmet;
+    private Item armor;
+    private Weapon currentWeapon;
 
-    private static Item[] backPackItems;
+    private Item[] backPackItems;
     private ItemHolder nearestHolder;
-    private int holdersAround;
+    private List<ItemHolder> holdersAround = new();
 
-
-    public static Item[] BackPackItems => backPackItems;
+    public bool IsHoldersAround => holdersAround.Count > 0;
+    public Item[] BackPackItems => backPackItems;
     private void Awake()
     {
         EventsBus.Subscribe<OnApproachingItemHolder>(OnApproachingItemHolder);
@@ -31,31 +34,45 @@ public class Inventory : MonoBehaviour
 
     private void OnApproachingItemHolder(OnApproachingItemHolder data)
     {
-        ++holdersAround;
+        holdersAround.Add(data.ItemHolder);
         nearestHolder = data.ItemHolder;
     }
 
     private void OnLeavingItemHolder(OnLeavingItemHolder data)
     {
-        --holdersAround;
-        if (holdersAround == 0)
+        holdersAround.Remove(data.ItemHolder);
+        if (holdersAround.Count == 0)
             nearestHolder = null;
+        else if (holdersAround.Count > 0)
+            nearestHolder = holdersAround[0];
     }
 
     public void AddItemsFromHolder()
     {
-        --holdersAround;
-        List<Item> itemList = new List<Item>(backPackItems);
-        itemList.AddRange(nearestHolder.Items);
-        backPackItems = itemList.ToArray();
+        holdersAround.Remove(nearestHolder);
+        if (nearestHolder.Items != null)
+        {
+            List<Item> itemList = backPackItems != null ? new List<Item>(backPackItems) : new List<Item>();
+            itemList.AddRange(nearestHolder.Items);
+            backPackItems = itemList.ToArray();
+            EventsBus.Publish(new OnItemPickedUp { ItemHolder = nearestHolder });
+            if (holdersAround.Count == 0)
+                nearestHolder = null;
+            else if (holdersAround.Count > 0)
+                nearestHolder = holdersAround[0];
+        }
+        else
+        {
+            EventsBus.Publish(new OnItemPickedUp { ItemHolder = nearestHolder });
+        }
     }
 
-    public static void RemoveItem(int number)
+    public void RemoveItem(int number)
     {
         backPackItems[number] = null;
     }
 
-    public static void DropItem(int num, Vector3 position)
+    public void DropItem(int num, Vector3 position)
     {
         GameObject newHolderGO = Instantiate(prefab, position, Quaternion.identity);
         var newHolder = newHolderGO.GetComponent<ItemHolder>();
@@ -63,8 +80,9 @@ public class Inventory : MonoBehaviour
 
     }
 
-    public static void RefreshBackPack()
+    public void RefreshBackPack()
     {
-        backPackItems = Array.FindAll(backPackItems, item => item != null);
+        if (backPackItems != null)
+            backPackItems = Array.FindAll(backPackItems, item => item != null);
     }
 }

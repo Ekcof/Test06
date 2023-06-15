@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class ItemHolder : MonoBehaviour, IItemStorage
 {
+
     [SerializeField] private Sprite standardImage;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Collider2D collider;
-    private List<Item> items;
+    [SerializeField] private List<Item> items;
     public List<Item> Items => items;
 
     private void Awake()
@@ -46,7 +47,8 @@ public class ItemHolder : MonoBehaviour, IItemStorage
         // TODO: Reverse apply Item based on OnItemDropped
         Destroy(collider);
         gameObject.transform.DOScale(0, 0.3f).OnComplete(() =>
-         Destroy(gameObject));
+         Destroy(gameObject)
+         );
     }
 
     private void OnItemDropped(OnItemDropped data)

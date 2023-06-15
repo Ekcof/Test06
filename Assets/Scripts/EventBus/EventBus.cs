@@ -63,3 +63,4 @@ public class OnApproachingItemHolder { public ItemHolder ItemHolder; }
 public class OnLeavingItemHolder { public ItemHolder ItemHolder; }
 public class OnTakeButtonPress {  }
 public class OnOpenUIWindow { public string name; }
+public class OnHideUIWindow { public bool EnableGeneralHUD; }

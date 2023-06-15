@@ -3,6 +3,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+/// <summary>
+/// Responsible for moving player by joystick image on the screen
+/// </summary>
 public class JoyStickController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public Rigidbody2D playerRigidbody;

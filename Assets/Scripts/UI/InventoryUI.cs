@@ -8,13 +8,15 @@ public class InventoryUI : MonoBehaviour, IOpenUI
 {
     [SerializeField] private GameObject playerGO;
     [SerializeField] private GameObject prefab;
-    [SerializeField] private static Text descriptionText;
+    [SerializeField] private Text descriptionText;
     [SerializeField] private Button useButton;
     [SerializeField] private Button dropButton;
+    [SerializeField] private Button closeButton;
     [SerializeField] private GameObject row;
     [SerializeField] private List<ItemSlot> slots;
     [SerializeField] private List<InventoryRow>[] rows;
     [SerializeField] private GameObject content;
+    [SerializeField] private Inventory inventory;
 
     private List<ItemSlot> currentSlots;
 
@@ -23,8 +25,10 @@ public class InventoryUI : MonoBehaviour, IOpenUI
     private void Awake()
     {
         EventsBus.Subscribe<OnItemSlotSelected>(OnItemSlotSelected);
+        EventsBus.Subscribe<OnOpenUIWindow>(OnOpenUIWindow);
         useButton.onClick.AddListener(OnUseButtonClick);
         dropButton.onClick.AddListener(OnDropButtonClick);
+        closeButton.onClick.AddListener(Hide);
 
         foreach (var slot in slots)
         {
@@ -35,6 +39,14 @@ public class InventoryUI : MonoBehaviour, IOpenUI
     private void OnDestroy()
     {
         EventsBus.Unsubscribe<OnItemSlotSelected>(OnItemSlotSelected);
+        EventsBus.Unsubscribe<OnOpenUIWindow>(OnOpenUIWindow);
+    }
+
+    private void OnOpenUIWindow(OnOpenUIWindow data)
+    {
+        Debug.Log("Hey, Open Inventory UI!");
+        if (data.name == "InventoryUI")
+            Open();
     }
 
     private void OnUseButtonClick()
@@ -44,9 +56,9 @@ public class InventoryUI : MonoBehaviour, IOpenUI
 
     private void OnDropButtonClick()
     {
-        if (Inventory.BackPackItems.Length > 0)
+        if (inventory.BackPackItems.Length > 0)
         {
-            Inventory.DropItem(currentItemNum, playerGO.transform.position);
+            inventory.DropItem(currentItemNum, playerGO.transform.position);
             OnItemDeselect();
             RecalculateSlots();
         }
@@ -54,15 +66,16 @@ public class InventoryUI : MonoBehaviour, IOpenUI
 
     private void Open()
     {
-        gameObject.SetActive(true);
+        transform.DOScale(1, 0.3f).OnComplete(() => DOTween.Kill(transform));
         OnItemDeselect();
         RecalculateSlots();
     }
 
     private void Hide()
     {
-        Inventory.RefreshBackPack();
-        gameObject.SetActive(false);
+        EventsBus.Publish(new OnHideUIWindow { EnableGeneralHUD = true });
+        inventory.RefreshBackPack();
+        transform.DOScale(0, 0.3f).OnComplete(() => DOTween.Kill(transform));
     }
 
     private void OnItemSlotSelected(OnItemSlotSelected data)
@@ -83,18 +96,20 @@ public class InventoryUI : MonoBehaviour, IOpenUI
 
     private void RecalculateSlots()
     {
-        int length = Inventory.BackPackItems.Length;
-        while (slots.Count < length)
+        if (inventory.BackPackItems != null)
         {
-            AddSlotRow(length);
-        }
+            int length = inventory.BackPackItems.Length;
+            while (slots.Count < length)
+            {
+                AddSlotRow(length);
+            }
 
-        for (int i = 0; i < length; i++)
-        {
-            slots[i].gameObject.SetActive(true);
-            slots[i].ApplyItemDataToSlot(Inventory.BackPackItems[i], i);
+            for (int i = 0; i < length; i++)
+            {
+                slots[i].gameObject.SetActive(true);
+                slots[i].ApplyItemDataToSlot(inventory.BackPackItems[i], i);
+            }
         }
-
         //TODO : remove useless new rows!
     }
 
