@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,9 @@ public class ItemHolder : MonoBehaviour, IItemStorage
 {
     [SerializeField] private Sprite standardImage;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Collider2D collider;
     private List<Item> items;
+    public List<Item> Items => items;
 
     private void Awake()
     {
@@ -20,11 +23,30 @@ public class ItemHolder : MonoBehaviour, IItemStorage
         EventsBus.Unsubscribe<OnItemDropped>(OnItemDropped);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            EventsBus.Publish(new OnApproachingItemHolder { ItemHolder = this });
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            EventsBus.Publish(new OnLeavingItemHolder { ItemHolder = this });
+        }
+    }
+
     private void OnItemPickedUp(OnItemPickedUp data)
     {
         if (data.ItemHolder != this)
             return;
         // TODO: Reverse apply Item based on OnItemDropped
+        Destroy(collider);
+        gameObject.transform.DOScale(0, 0.3f).OnComplete(() =>
+         Destroy(gameObject));
     }
 
     private void OnItemDropped(OnItemDropped data)

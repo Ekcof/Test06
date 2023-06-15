@@ -89,9 +89,18 @@ i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts
 ++ItemHolder.cs
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\itemholder.cs
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\itemholder.cs
-++Player.cs
-i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\player.cs
-i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\player.cs
+++TextMesh Pro
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\
+++CameraFollower.cs
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\camerafollower.cs
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\camerafollower.cs
+++JoyStickController.cs
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\joystickcontroller.cs
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\joystickcontroller.cs
+++PlayerCreature.cs
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\playercreature.cs
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\playercreature.cs
 ++Microsoft.Win32.Primitives
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:
@@ -839,6 +848,18 @@ i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\epic to
 ++Creature.cs
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\creatures\creature.cs
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\creatures\creature.cs
+++Fonts
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\fonts\
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\fonts\
+++Resources
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\resources\
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\resources\
+++Shaders
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\shaders\
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\shaders\
+++Sprites
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\sprites\
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\sprites\
 ++DOTweenModuleAudio.cs
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\dotween\modules\dotweenmoduleaudio.cs
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\dotween\modules\dotweenmoduleaudio.cs
@@ -884,6 +905,69 @@ i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\epic to
 ++URP Compatibility.txt
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\epic toon fx\upgrade\urp compatibility.txt
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\epic toon fx\upgrade\urp compatibility.txt
+++LiberationSans - OFL.txt
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\fonts\liberationsans - ofl.txt
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\fonts\liberationsans - ofl.txt
+++LineBreaking Following Characters.txt
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\resources\linebreaking following characters.txt
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\resources\linebreaking following characters.txt
+++LineBreaking Leading Characters.txt
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\resources\linebreaking leading characters.txt
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\resources\linebreaking leading characters.txt
+++TMP_Bitmap-Custom-Atlas.shader
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_bitmap-custom-atlas.shader
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_bitmap-custom-atlas.shader
+++TMP_Bitmap-Mobile.shader
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_bitmap-mobile.shader
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_bitmap-mobile.shader
+++TMP_Bitmap.shader
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_bitmap.shader
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_bitmap.shader
+++TMP_SDF-Mobile Masking.shader
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_sdf-mobile masking.shader
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_sdf-mobile masking.shader
+++TMP_SDF-Mobile Overlay.shader
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_sdf-mobile overlay.shader
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_sdf-mobile overlay.shader
+++TMP_SDF-Mobile SSD.shader
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_sdf-mobile ssd.shader
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_sdf-mobile ssd.shader
+++TMP_SDF-Mobile.shader
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_sdf-mobile.shader
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_sdf-mobile.shader
+++TMP_SDF-Surface-Mobile.shader
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_sdf-surface-mobile.shader
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_sdf-surface-mobile.shader
+++TMP_SDF-Surface.shader
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_sdf-surface.shader
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_sdf-surface.shader
+++TMP_SDF Overlay.shader
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_sdf overlay.shader
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_sdf overlay.shader
+++TMP_SDF SSD.shader
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_sdf ssd.shader
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_sdf ssd.shader
+++TMP_SDF.shader
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_sdf.shader
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_sdf.shader
+++TMP_Sprite.shader
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_sprite.shader
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmp_sprite.shader
+++TMPro.cginc
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmpro.cginc
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmpro.cginc
+++TMPro_Mobile.cginc
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmpro_mobile.cginc
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmpro_mobile.cginc
+++TMPro_Properties.cginc
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmpro_properties.cginc
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmpro_properties.cginc
+++TMPro_Surface.cginc
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmpro_surface.cginc
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\shaders\tmpro_surface.cginc
+++EmojiOne Attribution.txt
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\sprites\emojione attribution.txt
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\sprites\emojione attribution.txt
 ++VFX Library
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\epic toon fx\demo\scripts\vfx library\
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\epic toon fx\demo\scripts\vfx library\

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class InventoryUI : MonoBehaviour
+public class InventoryUI : MonoBehaviour, IOpenUI
 {
     [SerializeField] private GameObject playerGO;
     [SerializeField] private GameObject prefab;
@@ -25,6 +25,7 @@ public class InventoryUI : MonoBehaviour
         EventsBus.Subscribe<OnItemSlotSelected>(OnItemSlotSelected);
         useButton.onClick.AddListener(OnUseButtonClick);
         dropButton.onClick.AddListener(OnDropButtonClick);
+
         foreach (var slot in slots)
         {
             slot.gameObject.SetActive(false);

@@ -58,3 +58,8 @@ public class OnItemDropped { public ItemHolder ItemHolder; public Item Item; }
 public class OnItemPickedUp { public ItemHolder ItemHolder; public Item Item; public IItemTaker Pickable; }
 
 public class OnShutDownWindows { }
+
+public class OnApproachingItemHolder { public ItemHolder ItemHolder; }
+public class OnLeavingItemHolder { public ItemHolder ItemHolder; }
+public class OnTakeButtonPress {  }
+public class OnOpenUIWindow { public string name; }
