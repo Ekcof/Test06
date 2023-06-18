@@ -82,7 +82,6 @@ public class JoyStickController : MonoBehaviour, IPointerDownHandler, IPointerUp
         }
         if (Input.GetMouseButton(0) && isCircle)
         {
-            Debug.Log("Is holding!");
             if (isCircle)
             {
                 if (isHolding)
@@ -105,12 +104,11 @@ public class JoyStickController : MonoBehaviour, IPointerDownHandler, IPointerUp
     {
         Vector2 screenCenter = new Vector2(Screen.width, Screen.height) / 2f;
         Vector2 clickPosition = pos - screenCenter;
-        Debug.Log(clickPosition);
 
         Vector2 elementCenterPosition = RectTransformUtility.WorldToScreenPoint(Camera.main, transform.position);
 
         Vector2 circleCenter = elementCenterPosition - screenCenter;
-        Debug.Log(circleCenter);
+
         Vector2 direction = (clickPosition - circleCenter).normalized;
 
         Vector2 targetVelocity = direction * movementSpeed;
@@ -120,11 +118,11 @@ public class JoyStickController : MonoBehaviour, IPointerDownHandler, IPointerUp
             targetVelocity = targetVelocity.normalized * movementSpeed;
         }
 
-        pointer.anchoredPosition = (targetVelocity.normalized * pointer.rect.width/2);
+        pointer.anchoredPosition = (targetVelocity.normalized * pointer.rect.width / 2);
         playerRigidbody.velocity = targetVelocity;
     }
 
-private void StopMove()
+    private void StopMove()
     {
         pointer.anchoredPosition = Vector2.zero;
         playerRigidbody.velocity = Vector2.zero;

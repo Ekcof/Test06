@@ -333,6 +333,8 @@ MonoBehaviour:
   _slotButton: {fileID: 7491938589950288698}
   logoImage: {fileID: 4953800275546247407}
   smallImage: {fileID: 4953800275546247407}
+  titleText: {fileID: 4616344996385340103}
+  numberText: {fileID: 4616344996175095506}
 --- !u!114 &7491938589950288698
 MonoBehaviour:
   m_ObjectHideFlags: 0

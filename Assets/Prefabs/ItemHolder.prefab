@@ -124,5 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c5aef0ff79dbc542ba60a1e016c3b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standardImage: {fileID: 0}
-  spriteRenderer: {fileID: 0}
+  standardImage: {fileID: 139659999, guid: aceadba1307f0e74686cbf9aed6895a1, type: 3}
+  spriteRenderer: {fileID: 3014528710562846902}
+  collider: {fileID: 2122831711193699718}
+  items: []

@@ -14,6 +14,7 @@ public class ItemHolder : MonoBehaviour, IItemStorage
 
     private void Awake()
     {
+        if (items == null) items = new List<Item>();
         EventsBus.Subscribe<OnItemPickedUp>(OnItemPickedUp);
         EventsBus.Subscribe<OnItemDropped>(OnItemDropped);
     }
@@ -28,6 +29,7 @@ public class ItemHolder : MonoBehaviour, IItemStorage
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Player appeared");
             EventsBus.Publish(new OnApproachingItemHolder { ItemHolder = this });
         }
     }
@@ -58,46 +60,47 @@ public class ItemHolder : MonoBehaviour, IItemStorage
 
         if (data.Item != null)
         {
+            AddItem(data.Item);
+        }
+    }
+
+    private void AddItem(Item item)
+    {
+        if (items.Count == 0 || !item.IsMultiply)
+            items.Add(item);
+        else
+        {
             for (int i = 0; i < items.Count; i++)
             {
-                if (items[i].Id == data.Item.Id)
+                if (items[i].Id == item.Id)
                 {
-                    if (!items[i].IsMultiply)
-                    {
-                        items.Add(data.Item);
-                        return;
-                    }
-                    else
+                    if (items[i].IsMultiply)
                     {
                         int countHas = items[i].Count;
                         int maxCountIs = items[i].MaxCount;
 
-                        int countToGive = data.Item.Count;
+                        int countToGive = item.Count;
 
                         if (maxCountIs - countHas < countToGive)
                         {
                             items[i].Count = items[i].MaxCount;
-                            data.Item.Count = countToGive - (maxCountIs - countHas);
-                            items.Add(data.Item);
+                            item.Count = countToGive - (maxCountIs - countHas);
+                            items.Add(item);
                         }
                         else
                         {
 
                         }
+                        //TODO Check for all stacks
                     }
                 }
                 else
                 {
-                    items.Add(data.Item);
+                    items.Add(item);
                     return;
                 }
             }
         }
-    }
-
-    private void AddItem()
-    {
-
     }
 
     private void RemoveItem()

@@ -30,6 +30,6 @@ public class PlayerCreature : Creature, IItemTaker
 
     private void PickFromItemHolder(OnItemPickedUp data)
     {
-        EventsBus.Publish<OnShutDownWindows>(new OnShutDownWindows());
+        EventsBus.Publish(new OnShutDownWindows());
     }
 }

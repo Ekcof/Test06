@@ -35,7 +35,7 @@ MonoBehaviour:
     Count: 0
     MaxCount: 0
     Weight: 0
-    BaseCost: 0
+    BaseCost: 1000
     IsMelee: 0
     maxAmmo: 30
     basicDamageMin: 15
@@ -58,4 +58,3 @@ MonoBehaviour:
     suitableWeapons: []
     hasBulletCase: 0
     bulletCase: {fileID: 0}
-    additionalDamage: 0

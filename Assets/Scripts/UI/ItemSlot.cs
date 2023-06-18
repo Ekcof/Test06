@@ -29,14 +29,21 @@ public class ItemSlot : MonoBehaviour
 
     public void ApplyItemDataToSlot(Item item, int slotNum)
     {
-        currentItem = item;
-        titleText.text = item.Name;
-        logoImage.sprite = item.Logo;
-        if (item.IsMultiply)
-            numberText.text = item.Count > 1 ? $"x{item.Count}" : string.Empty;
+        if (item != null)
+        {
+            currentItem = item;
+            titleText.text = item.Name;
+            logoImage.sprite = item.Logo;
+            if (item.IsMultiply)
+                numberText.text = item.Count > 1 ? $"x{item.Count}" : string.Empty;
+            else
+                numberText.text = string.Empty;
+            currentSlotNumber = slotNum;
+        }
         else
-            numberText.text = string.Empty;
-        currentSlotNumber = slotNum;
+        {
+            RefreshSlotData();
+        }
     }
 
     public void RefreshSlotData()
@@ -45,6 +52,7 @@ public class ItemSlot : MonoBehaviour
         titleText.text = string.Empty;
         numberText.text = string.Empty;
         logoImage.sprite = null;
+        gameObject.SetActive(false);
     }
 
     private void OnSlotClick()

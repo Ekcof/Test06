@@ -80,6 +80,9 @@ i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts
 ++ItemSlot.cs
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\ui\itemslot.cs
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\ui\itemslot.cs
+++Ammo545.cs
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\ammo545.cs
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\ammo545.cs
 ++IItemStorage.cs
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\iitemstorage.cs
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\iitemstorage.cs

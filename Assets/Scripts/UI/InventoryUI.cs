@@ -51,12 +51,12 @@ public class InventoryUI : MonoBehaviour, IOpenUI
 
     private void OnUseButtonClick()
     {
-        // TODO: Make a dropped item gameobject under the player
+        // TODO: Make an action for disposable items
     }
 
     private void OnDropButtonClick()
     {
-        if (inventory.BackPackItems.Length > 0)
+        if (inventory.BackPackItems.Count > 0)
         {
             inventory.DropItem(currentItemNum, playerGO.transform.position);
             OnItemDeselect();
@@ -74,16 +74,28 @@ public class InventoryUI : MonoBehaviour, IOpenUI
     private void Hide()
     {
         EventsBus.Publish(new OnHideUIWindow { EnableGeneralHUD = true });
-        inventory.RefreshBackPack();
         transform.DOScale(0, 0.3f).OnComplete(() => DOTween.Kill(transform));
+
+        if (currentSlots != null)
+        {
+            foreach (var slot in currentSlots)
+            {
+                slot.RefreshSlotData();
+                slot.gameObject.SetActive(false);
+            }
+            currentSlots.Clear();
+        }
     }
 
     private void OnItemSlotSelected(OnItemSlotSelected data)
     {
         descriptionText.text = data.Item.Description;
-        if (data.Item.Type == ItemType.disposable)
-            useButton.gameObject.SetActive(true);
-        dropButton.gameObject.SetActive(true);
+        if (data.Item != null)
+        {
+            if (data.Item.Type == ItemType.disposable)
+                useButton.gameObject.SetActive(true);
+            dropButton.gameObject.SetActive(true);
+        }
         currentItemNum = data.SlotNumber;
     }
 
@@ -98,16 +110,37 @@ public class InventoryUI : MonoBehaviour, IOpenUI
     {
         if (inventory.BackPackItems != null)
         {
-            int length = inventory.BackPackItems.Length;
+            if (currentSlots != null)
+            {
+                if (currentSlots.Count > 0)
+                {
+                    foreach (var currentSlot in currentSlots)
+                    {
+                        currentSlot.RefreshSlotData();
+                    }
+                }
+            }
+
+            int length = inventory.BackPackItems.Count;
+            Debug.Log($"____Length is {length}");
             while (slots.Count < length)
             {
                 AddSlotRow(length);
             }
 
-            for (int i = 0; i < length; i++)
+            if (currentSlots != null)
+                currentSlots.Clear();
+            else
+                currentSlots = new List<ItemSlot>();
+
+            if (length > 0)
             {
-                slots[i].gameObject.SetActive(true);
-                slots[i].ApplyItemDataToSlot(inventory.BackPackItems[i], i);
+                for (int i = 0; i < length; i++)
+                {
+                    currentSlots.Add(slots[i]);
+                    currentSlots[i].gameObject.SetActive(true);
+                    currentSlots[i].ApplyItemDataToSlot(inventory.BackPackItems[i], i);
+                }
             }
         }
         //TODO : remove useless new rows!
