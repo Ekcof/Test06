@@ -64,6 +64,11 @@ public class ItemHolder : MonoBehaviour, IItemStorage
         }
     }
 
+
+    /// <summary>
+    /// Add item to the ItemHolder
+    /// </summary>
+    /// <param name="item"></param>
     private void AddItem(Item item)
     {
         if (items.Count == 0 || !item.IsMultiply)
@@ -85,21 +90,12 @@ public class ItemHolder : MonoBehaviour, IItemStorage
                         {
                             items[i].Count = items[i].MaxCount;
                             item.Count = countToGive - (maxCountIs - countHas);
-                            items.Add(item);
                         }
-                        else
-                        {
-
-                        }
-                        //TODO Check for all stacks
                     }
                 }
-                else
-                {
-                    items.Add(item);
-                    return;
-                }
             }
+            if (items.Count > 0)
+                items.Add(item);
         }
     }
 
