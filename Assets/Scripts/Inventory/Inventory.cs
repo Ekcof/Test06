@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Responsible for storing, collecting and leaving items of player
 /// </summary>
-public class Inventory : MonoBehaviour
+public class Inventory : ItemContainerBase
 {
     [SerializeField] private GameObject prefab;
 
@@ -14,12 +14,11 @@ public class Inventory : MonoBehaviour
     private Item armor;
     private Weapon currentWeapon;
 
-    private List<Item> backPackItems;
     private ItemHolder nearestHolder;
     private List<ItemHolder> holdersAround = new();
 
     public bool IsHoldersAround => holdersAround.Count > 0;
-    public List<Item> BackPackItems => backPackItems;
+    public List<Item> BackPackItems => items;
     private void Awake()
     {
         EventsBus.Subscribe<OnApproachingItemHolder>(OnApproachingItemHolder);
@@ -63,9 +62,12 @@ public class Inventory : MonoBehaviour
         holdersAround.Remove(nearestHolder);
         if (nearestHolder.Items != null)
         {
-            if (backPackItems == null)
-                backPackItems = new List<Item>();
-            backPackItems.AddRange(nearestHolder.Items);
+            if (items == null)
+                items = new List<Item>();
+            foreach(Item item in nearestHolder.Items)
+            {
+                items.Add(item);
+            }
             EventsBus.Publish(new OnItemPickedUp { ItemHolder = nearestHolder });
             if (holdersAround.Count == 0)
                 nearestHolder = null;
@@ -84,7 +86,7 @@ public class Inventory : MonoBehaviour
     /// <param name="number"></param>
     public void RemoveItem(int number)
     {
-        backPackItems.RemoveAt(number);
+        items.RemoveAt(number);
     }
 
     /// <summary>
@@ -101,6 +103,6 @@ public class Inventory : MonoBehaviour
             nearestHolder = newHolderGO.GetComponent<ItemHolder>();
         }
         EventsBus.Publish(new OnItemDropped() { Item = BackPackItems[num], ItemHolder = nearestHolder });
-        backPackItems.RemoveAt(num);
+        items.RemoveAt(num);
     }
 }

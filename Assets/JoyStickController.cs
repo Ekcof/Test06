@@ -11,15 +11,18 @@ public class JoyStickController : MonoBehaviour, IPointerDownHandler, IPointerUp
     public Rigidbody2D playerRigidbody;
     public float movementSpeed = 3f;
     [SerializeField] private RectTransform pointer;
+    [SerializeField] private Transform target;
     private bool isHolding;
     private bool isCircle;
     private Action currentInput;
     private RectTransform rect;
+    private Transform playerTransform;
 
     private void Start()
     {
         rect = GetComponent<RectTransform>();
         currentInput = Application.isMobilePlatform ? OnMobileInput : OnMouseInput;
+        playerTransform = playerRigidbody.transform;
     }
 
     private void Update()
@@ -117,6 +120,8 @@ public class JoyStickController : MonoBehaviour, IPointerDownHandler, IPointerUp
         {
             targetVelocity = targetVelocity.normalized * movementSpeed;
         }
+
+        target.position = (Vector2)playerTransform.position + new Vector2(1f, 1f) * direction;
 
         pointer.anchoredPosition = (targetVelocity.normalized * pointer.rect.width / 2);
         playerRigidbody.velocity = targetVelocity;
