@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Creature : IEffectApplicable
+public class Creature : MonoBehaviour, IEffectApplicable
 {
     [SerializeField] private int maxHp;
     [SerializeField] private float currentHp;
@@ -10,6 +10,18 @@ public class Creature : IEffectApplicable
 
     private Inventory inventory;
     [SerializeField] private bool isLootable;
+    [SerializeField] private SpriteRenderer hpRenderer;
+    private Transform hpTransform;
+
+    private void Awake()
+    {
+        hpTransform = hpRenderer.transform;
+    }
+
+    private protected void OnGetDammage()
+    {
+
+    }
 
     public virtual void OnApplying(float modificator, float duration, DisposableFXType type)
     { 
