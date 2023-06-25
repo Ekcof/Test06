@@ -9,10 +9,10 @@ i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\
 ++DOTween
-i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\dotween\
-i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\dotween\
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:
 ++Epic Toon FX
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\epic toon fx\
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\epic toon fx\
@@ -26,18 +26,15 @@ i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\epic to
 ++Creatures
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\creatures\
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\creatures\
+++Creature.cs
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\creatures\creature.cs
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\creatures\creature.cs
 ++EventBus
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\eventbus\
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\eventbus\
-++EventBus.cs
-i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\eventbus\eventbus.cs
-i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\eventbus\eventbus.cs
 ++Inventory
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\inventory\
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\inventory\
-++Inventory.cs
-i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\inventory\inventory.cs
-i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\inventory\inventory.cs
 ++Items
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\items\
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\items\
@@ -86,7 +83,6 @@ i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts
 ++Ammo545.cs
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\ammo545.cs
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\ammo545.cs
-++IItemStorage.cs
 ++IItemTaker.cs
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\iitemtaker.cs
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\iitemtaker.cs
@@ -855,9 +851,12 @@ i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\epic to
 ++Changelog.txt
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\epic toon fx\changelog.txt
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\epic toon fx\changelog.txt
-++Creature.cs
-i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\creatures\creature.cs
-i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\creatures\creature.cs
+++EventBus.cs
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\eventbus\eventbus.cs
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\eventbus\eventbus.cs
+++Inventory.cs
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\inventory\inventory.cs
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\inventory\inventory.cs
 ++Fonts
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\textmesh pro\fonts\
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\textmesh pro\fonts\
@@ -1031,5 +1030,3 @@ i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\epic to
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\epic toon fx\demo\scripts\vfx library\uicanvasmanager.cs
 ++Assembly-CSharp.Player
 i:{00000000-0000-0000-0000-000000000000}:Assembly-CSharp.Player
-++Assembly-CSharp.Player (выгружено)
-++Решение "Test06" ‎(проекты: 1 из 2)

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerCreature : Creature, IItemTaker
 {
+    [SerializeField] private Inventory inventory;
     private void Initialize()
     {
         EventsBus.Subscribe<OnApproachingItemHolder>(OnApproachingItemHolder);

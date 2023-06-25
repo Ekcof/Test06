@@ -9,7 +9,7 @@ public class ItemHolder : ItemContainerBase
     [SerializeField] private Sprite standardImage;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Collider2D collider;
-    
+    [SerializeField] private bool IsTakeByApproach;
     public List<Item> Items => items;
 
     private void Awake()
@@ -29,7 +29,8 @@ public class ItemHolder : ItemContainerBase
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player appeared");
+            if(IsTakeByApproach)
+            { }
             EventsBus.Publish(new OnApproachingItemHolder { ItemHolder = this });
         }
     }
