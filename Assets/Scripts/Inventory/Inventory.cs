@@ -19,6 +19,8 @@ public class Inventory : ItemContainerBase
 
     public bool IsHoldersAround => holdersAround.Count > 0;
     public List<Item> BackPackItems => items;
+    public bool HasNearestHolder => nearestHolder != null;
+
     private void Awake()
     {
         EventsBus.Subscribe<OnApproachingItemHolder>(OnApproachingItemHolder);

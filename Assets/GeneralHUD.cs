@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using DG.Tweening;
 
 /// <summary>
 /// The main HUD for playing
@@ -13,6 +15,8 @@ public class GeneralHUD : MonoBehaviour
     [SerializeField] private Button fireButton;
     [SerializeField] private Inventory inventory;
     [SerializeField] private JoyStickController joyStickController;
+    [SerializeField] private GameObject namePanel;
+    [SerializeField] private TMP_Text nameText;
 
     private void Start()
     {
@@ -34,6 +38,7 @@ public class GeneralHUD : MonoBehaviour
         EventsBus.Unsubscribe<OnLeavingItemHolder>(OnLeavingItemHolder);
         EventsBus.Unsubscribe<OnOpenUIWindow>(OnOpenUIWindow);
         EventsBus.Unsubscribe<OnHideUIWindow>(OnHideUIWindow);
+        DOTween.Kill(namePanel.transform);
     }
 
     private void OpenInventory()
@@ -43,13 +48,36 @@ public class GeneralHUD : MonoBehaviour
 
     private void OnApproachingItemHolder(OnApproachingItemHolder data)
     {
+        if (!namePanel.activeSelf)
+        {
+            DOTween.Kill(namePanel.transform);
+            namePanel.SetActive(true);
+            namePanel.transform.DOScale(1, 0.3f).OnComplete(() => OnShowName(data.ItemHolder));
+        }
+        nameText.text = data.ItemHolder.HolderName;
         takeButton.gameObject.SetActive(true);
+    }
+
+    private void OnShowName(ItemHolder holder)
+    {
+        if (holder.IsTakeByApproach)
+        {
+            namePanel.transform.DOScale(0, 0.3f).SetDelay(2f).OnComplete(OnCloseNamePanel);
+        }
+    }
+
+    private void OnCloseNamePanel()
+    {
+
+        DOTween.Kill(namePanel.transform);
+        namePanel?.SetActive(false);
     }
 
     private void OnLeavingItemHolder(OnLeavingItemHolder data)
     {
-        if (!inventory.IsHoldersAround)
-            takeButton.gameObject.SetActive(false);
+        if (!inventory.HasNearestHolder && !data.ItemHolder.IsTakeByApproach)
+            namePanel.transform.DOScale(0, 0.3f).OnComplete(OnCloseNamePanel);
+        takeButton.gameObject.SetActive(false);
     }
 
     private void OnOpenUIWindow(OnOpenUIWindow data)

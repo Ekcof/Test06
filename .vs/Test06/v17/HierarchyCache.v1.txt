@@ -32,6 +32,9 @@ i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts
 ++EventBus
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\eventbus\
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\eventbus\
+++EventBus.cs
+i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\eventbus\eventbus.cs
+i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\eventbus\eventbus.cs
 ++Inventory
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\inventory\
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\inventory\
@@ -851,9 +854,6 @@ i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\epic to
 ++Changelog.txt
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\epic toon fx\changelog.txt
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\epic toon fx\changelog.txt
-++EventBus.cs
-i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\eventbus\eventbus.cs
-i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\eventbus\eventbus.cs
 ++Inventory.cs
 i:{4c8f1f51-34c3-4c99-bb45-acaecddc4716}:c:\unity_projects\test06\assets\scripts\inventory\inventory.cs
 i:{f9c58565-4bab-7d0a-02ce-4985f80632c8}:c:\unity_projects\test06\assets\scripts\inventory\inventory.cs
