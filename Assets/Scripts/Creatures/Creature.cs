@@ -46,7 +46,17 @@ public class Creature : MonoBehaviour, IEffectApplicable
 
     }
 
-    private protected void OnDeath()
+    private virtual protected void OnDeath()
+    {
+
+    }
+
+    private virtual protected void Initialize()
+    {
+
+    }
+
+    private virtual protected void Deinitialize()
     {
 
     }

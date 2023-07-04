@@ -5,14 +5,14 @@ using UnityEngine;
 public class PlayerCreature : Creature, IItemTaker
 {
     [SerializeField] private Inventory inventory;
-    private void Initialize()
+    private protected override void Initialize()
     {
         EventsBus.Subscribe<OnApproachingItemHolder>(OnApproachingItemHolder);
         EventsBus.Subscribe<OnLeavingItemHolder>(OnLeavingItemHolder);
         EventsBus.Subscribe<OnItemPickedUp>(PickFromItemHolder);
     }
 
-    private void Deinitialize()
+    private protected override void Deinitialize()
     {
         EventsBus.Unsubscribe<OnApproachingItemHolder>(OnApproachingItemHolder);
         EventsBus.Unsubscribe<OnLeavingItemHolder>(OnLeavingItemHolder);

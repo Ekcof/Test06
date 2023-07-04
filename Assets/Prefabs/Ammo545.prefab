@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2326234398686245690}
   - component: {fileID: 3014528710562846902}
   - component: {fileID: 2122831711193699718}
-  - component: {fileID: 3352599255896101972}
   m_Layer: 0
   m_Name: Ammo545
   m_TagString: Untagged
@@ -112,30 +111,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
---- !u!114 &3352599255896101972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1584480969012872801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 121646aa3c1e2494f9df0e1270bcc8e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  standardImage: {fileID: 21300000, guid: 93bce68c22ba2ed4592b0338ae2ac8fd, type: 3}
-  spriteRenderer: {fileID: 3014528710562846902}
-  collider: {fileID: 2122831711193699718}
-  items:
-  - Id: Ammo545
-    Type: 1
-    Name: Ammo545
-    Description: This is ammo
-    Logo: {fileID: 21300000, guid: d45f0cae013abb84688afe6e4bc52845, type: 3}
-    BigImage: {fileID: 21300000, guid: d45f0cae013abb84688afe6e4bc52845, type: 3}
-    IsMultiply: 1
-    Count: 69
-    MaxCount: 100
-    Weight: 0.01
-    BaseCost: 5
